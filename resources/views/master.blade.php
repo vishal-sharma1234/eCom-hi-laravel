@@ -25,9 +25,7 @@
         padding-top: 100px;
     }
 
-    /* .footer{
-        margin-bottom: 0px;
-    } */
+    
 
 </style>
 
