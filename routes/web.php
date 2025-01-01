@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::view('/login', 'login');
+// Route::view('/login', 'login');
 
-// Route::post('/login', [UserController::class, 'login']);
+Route::post('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'loginView']);
+
+Route::get('/logout',[UserController::class, 'logout']);
 
 Route::get('/' , [ProductController::class , 'index']);
