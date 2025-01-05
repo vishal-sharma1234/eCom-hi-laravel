@@ -11,15 +11,20 @@ use Illuminate\Support\Facades\DB;
 
 class User_seeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        DB::table("users")->insert([
-            'name' => 'Vishal Sharma',
-            'email' => 'v@g.com',
-            'password' => Hash::make('Vishal123')
-        ]);
+        DB::table("users")->insert([[
+            'name' => 'Ramesh Sharma',
+            'email' => 'r@g.com',
+            'password' => Hash::make('Ramesh123')
+        ],[
+            'name' => 'Shahid Sharma',
+            'email' => 's@g.com',
+            'password' => Hash::make('Shahid123')
+        ],[
+            'name' => 'Lokesh Sharma',
+            'email' => 'l@g.com',
+            'password' => Hash::make('Shahid123')
+        ]]);
     }
 }

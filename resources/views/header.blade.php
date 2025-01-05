@@ -39,7 +39,7 @@ if (Auth::check()) {
 
                 @if($user)
 
-                <li><a href="#" class="nav-link active" style="text-decoration: none;">Cart Item({{$total}})</a></li>
+                <li><a href="/cart" class="nav-link active" style="text-decoration: none;">Cart Item({{$total}})</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" style="text-decoration:none; margin: 0 20px;" role="button" data-bs-toggle="dropdown">{{$user}}</a>
                     <ul class="dropdown-menu">
@@ -47,7 +47,7 @@ if (Auth::check()) {
                     </ul>
                 </li>
                 @else
-                <li><a href="#" class="nav-link active" style="text-decoration: none;">Cart Item({{$total}})</a></li>
+                <li><a href="/cart"  class="nav-link active" style="text-decoration: none;">Cart Item({{$total}})</a></li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/login">Login</a>
                 </li>

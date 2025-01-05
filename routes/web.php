@@ -23,5 +23,7 @@ Route::get('/logout',[UserController::class, 'logout']);
 Route::get('/' , [ProductController::class , 'index']);
 Route::get('/search' , [ProductController::class , 'search']);
 Route::post('/add-to-cart' , [ProductController::class , 'addToCart']);
+Route::get('/cart' , [ProductController::class , 'cartList']);
 Route::get('/detail/{id}', [ProductController::class, 'getProductDetailByID']);
+Route::get('/remove-item/{id}', [ProductController::class, 'removeItem']);
 
