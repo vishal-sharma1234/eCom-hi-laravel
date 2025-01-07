@@ -27,6 +27,9 @@ if (Auth::check()) {
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/orders">Orders</a>
+                </li>
 
                 <form class="d-flex search" action="/search" style="width: 100%;">
                     <input class="form-control me-2 search-input " type="search" placeholder="Search" name="query" aria-label="Search">
@@ -47,7 +50,7 @@ if (Auth::check()) {
                     </ul>
                 </li>
                 @else
-                <li><a href="/cart"  class="nav-link active" style="text-decoration: none;">Cart Item({{$total}})</a></li>
+                <li><a href="/cart" class="nav-link active" style="text-decoration: none;">Cart Item({{$total}})</a></li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/login">Login</a>
                 </li>

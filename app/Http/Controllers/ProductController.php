@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -72,5 +73,51 @@ class ProductController extends Controller
     {
         Cart::destroy($id);
         return redirect('/cart');
+    }
+
+    function orderNow()
+    {
+
+        $user_id =  Auth::user()['id'];
+        $total = DB::table('cart')
+            ->join('products', 'cart.product_id', 'products.id')
+            ->where('cart.user_id', $user_id)
+            ->sum('products.price');
+        return view('order', ['total' => $total]);
+    }
+
+    function payment(Request $req)
+    {
+
+        $user_id = Auth::user()['id'];
+        // $products = DB::table('cart')->join('products', 'cart.product_id', 'products.id')->select('products.*', 'cart.id as cart_id')->where('cart.user_id', $user_id)->get();
+
+        $products = Cart::where('user_id', $user_id)->get();
+
+        foreach ($products as $product) {
+            $order = new Order();
+            $order->user_id = $user_id;
+            $order->product_id = $product->product_id;
+            $order->address = $req->address;
+            $order->status = "panding";
+            $order->payment_method = $req->payment;
+            $order->payment_status = "panding";
+            $order->save();
+        }
+        Cart::where('user_id', $user_id)->delete();
+
+        return redirect('/');
+    }
+
+
+    function myorders()
+    {
+
+        $user_id = Auth::user()['id'];
+        $products = DB::table('orders')
+            ->join('products', 'orders.product_id', 'products.id')
+            ->where('orders.user_id', $user_id)
+            ->get();
+        return view('myorders', ['products' => $products]);
     }
 }

@@ -50,7 +50,8 @@
     .cart-list-devider{
         border-bottom: 0.5px solid black;
         padding: 5px 0;
-       
+        margin: 0;
+        width: 95%;
     }
 
 </style>

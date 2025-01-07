@@ -8,7 +8,7 @@
         <div class="col-sm-6">
             <a href="/" style="text-decoration: none;">Go Back</a>
             <h3>Name : {{$product['name']}}</h3>
-            <h4>Price : {{$product['price']}}</h4>
+            <h4>Price : ₹ {{$product['price']}}/-</h4>
             <h5>Category : {{$product['category']}}</h5>
             <h6>Description : {{$product['description']}}</h6>
             <br>
