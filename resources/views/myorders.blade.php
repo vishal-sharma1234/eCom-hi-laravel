@@ -5,7 +5,7 @@
     <center>
         <div class="trending-wrapper">
             <h1>Order List</h1>
-            <div class="products" style="">
+            <div class="products" >
 
                 @foreach($products as $item)
                 <div class="row cart-list-devider">

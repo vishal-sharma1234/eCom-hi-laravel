@@ -5,7 +5,7 @@
     <center>
         <div class="trending-wrapper">
             <h1>Cart Items</h1>
-            <div class="products" style="">
+            <div class="products" >
                 @if($products->count() != 0)
                 <a href="/order" class="btn btn-success" style="margin: 10px 0;">Order Now</a>
                 @endif
